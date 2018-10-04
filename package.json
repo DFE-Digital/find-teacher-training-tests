@@ -7,6 +7,10 @@
     "cypress": "^3.1.0"
   },
   "scripts": {
-    "cypress:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:verify": "cypress verify",
+    "cy:version": "cypress version",
+    "test": "cypress run"
   }
 }
