@@ -1,7 +1,5 @@
 /// <reference types="Cypress" />
 
-const URL = "https://find-postgraduate-teacher-training.education.gov.uk";
-
 describe("Basic", () => {
   before(() => {
     cy.visit(URL);
