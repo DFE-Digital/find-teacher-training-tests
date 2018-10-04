@@ -7,6 +7,10 @@ describe("Basic", () => {
     cy.visit(URL);
   });
 
+  afterEach(() => {
+    cy.checkForDefaultTitle();
+  });
+
   it("should have correct title", () => {
     cy.title().should("include", "Find courses by location or by training provider");
   });

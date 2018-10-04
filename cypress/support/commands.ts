@@ -23,3 +23,9 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+const DEFAULT_PAGE_TITLE = "Find postgraduate teacher training - GOV.UK";
+
+Cypress.Commands.add("checkForDefaultTitle", () => {
+  cy.title().should("not.equal", DEFAULT_PAGE_TITLE);
+});
