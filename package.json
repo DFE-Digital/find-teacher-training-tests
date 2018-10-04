@@ -1,5 +1,7 @@
 {
   "name": "search-and-compare-ui-tests",
+  "description": "End to end / smoke tests for Find Postgraduate Teacher Training",
+  "repository": "https://github.com/DFE-Digital/search-and-compare-ui-tests",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
