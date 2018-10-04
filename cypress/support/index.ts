@@ -13,3 +13,5 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 require("./commands.ts");
+
+global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
