@@ -8,9 +8,9 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --spec cypress/integration/search-and-compare-ui/**/*",
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
-    "test": "cypress run"
+    "test": "npm run cy:run"
   }
 }
