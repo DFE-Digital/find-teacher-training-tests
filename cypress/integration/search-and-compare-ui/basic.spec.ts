@@ -8,7 +8,7 @@ describe("Basic", () => {
   });
 
   it("should have correct title", () => {
-    cy.title().should("include", "Find course by location or by training provider");
+    cy.title().should("include", "Find courses by location or by training provider");
   });
 
   it("should show a validation error if user does not select a location", () => {
