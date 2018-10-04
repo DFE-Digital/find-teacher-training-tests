@@ -20,7 +20,7 @@ describe("Basic", () => {
     cy.contains("Across England").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
-    cy.get("h1").should("contain", "Find courses by suject");
+    cy.get("h1").should("contain", "Find courses by subject");
   });
 
   it("should show a validation error if user does not select a subject", () => {
