@@ -20,6 +20,7 @@ notifications:
   on_success: change
   on_failure: always
 deploy:
+  skip_cleanup: true
   - provider: script
     script: "./travis-deploy-azure.sh govuk-dfe-bat-deployment-user:$AZURE_WA_PASSWORD bat-dev-search-and-compare-ui-app"
     on: master
