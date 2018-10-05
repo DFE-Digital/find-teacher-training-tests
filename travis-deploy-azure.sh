@@ -2,7 +2,7 @@
 
 deployZip=deploy.zip
 
-echo "Removing old $deployZip if any..."
+echo "Removing old $deployZip if any…"
 [ -e $deployZip ] && rm $deployZip
 
 echo "Creating zip…"
