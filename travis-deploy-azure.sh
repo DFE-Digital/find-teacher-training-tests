@@ -18,7 +18,9 @@ echo "Removing old $deployZip if any…"
 [ -e $deployZip ] && rm $deployZip
 
 echo "Creating zip…"
-zip --quiet $deployZip -r ./deploy
+cd deploy
+zip --quiet ../$deployZip -r *
+cd ..
 
 echo "Uploading to azure WebJob…"
 curl -X PUT -u "$1" --data-binary @$deployZip --header "Content-Type: application/zip" --header "Content-Disposition: attachment; filename=$deployZip" https://$2.scm.azurewebsites.net/api/triggeredwebjobs/smoke-tests/
