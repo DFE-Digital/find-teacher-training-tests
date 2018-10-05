@@ -5,9 +5,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "cypress": "^3.1.0"
-  },
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run --spec cypress/integration/search-and-compare-ui/**/*",
@@ -15,5 +12,9 @@
     "cy:version": "cypress version",
     "start": "npm run test",
     "test": "npm run cy:run"
+  },
+  "dependencies": {
+    "applicationinsights": "^1.0.5",
+    "cypress": "^3.1.0"
   }
 }
