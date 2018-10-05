@@ -13,6 +13,7 @@
     "cy:run": "cypress run --spec cypress/integration/search-and-compare-ui/**/*",
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
+    "start": "npm run test",
     "test": "npm run cy:run"
   }
 }
