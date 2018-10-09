@@ -22,9 +22,9 @@ if (APPINSIGHTS_INSTRUMENTATIONKEY) {
   );
 }
 
-const child = spawn("npm", ["test"]);
-const stdout = "";
-const stderr = "";
+const child = spawn("./node_modules/.bin/cypress", ["run", "--spec", "cypress/integration/search-and-compare-ui/**/*"]);
+let stdout = "";
+let stderr = "";
 
 child.stdout.on("data", data => {
   stdout += data.toString();
