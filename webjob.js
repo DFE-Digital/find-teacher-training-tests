@@ -1,6 +1,7 @@
-const { spawn } = require("child_process");
+const { exec } = require("child_process");
+const path = require("path");
 
-const APPINSIGHTS_INSTRUMENTATIONKEY = process.env.APPINSIGHTS_INSTRUMENTATIONKEY;
+const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 let azureLoggingClient;
 
 if (APPINSIGHTS_INSTRUMENTATIONKEY) {
@@ -22,36 +23,30 @@ if (APPINSIGHTS_INSTRUMENTATIONKEY) {
   );
 }
 
-const child = spawn("./node_modules/.bin/cypress", ["run", "--spec", "cypress/integration/search-and-compare-ui/**/*"]);
-let stdout = "";
-let stderr = "";
+console.log("Starting tests; output is buffered rather than streamed, so you'll need to wait for about 2 minutes.");
 
-child.stdout.on("data", data => {
-  stdout += data.toString();
-  process.stdout.write(data.toString());
-});
+const binPath = path.resolve("./node_modules/.bin/cypress");
+exec(binPath + " run --spec cypress/integration/search-and-compare-ui/**/*", (error, stdout, stderr) => {
+  console.log(stdout);
 
-child.stderr.on("data", data => {
-  stderr += data.toString();
-  console.error(data.toString());
-});
-
-child.on("exit", (code, signal) => {
-  console.log("Tests child process exited with " + `code ${code} and signal ${signal}`);
-  const success = code === 0;
+  const success = !error;
   if (azureLoggingClient) {
     if (success) {
       azureLoggingClient.trackEvent({
-        name: "Smoke tests finished successfully",
-        properties: { customProperty: "Smoke tests failed" }
+        name: "Smoke tests finished successfully"
       });
+
+      process.exit(0);
     } else {
+      console.log("Error:", error);
+      console.log("stderr:", stderr);
+
       azureLoggingClient.trackEvent({
         name: "Smoke tests failed",
-        properties: { stdout, stderr }
+        properties: { error, stdout, stderr }
       });
+
+      process.exit(1);
     }
   }
-
-  process.exit(code);
 });
