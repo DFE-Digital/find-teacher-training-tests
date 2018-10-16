@@ -16,6 +16,12 @@ To run the tests in headless mode (like on CI):
 npm test
 ```
 
+To run the tests as they run on the Azure webjob (no streamed output; you'll need to set up the APPINSIGHTS_INSTRUMENTATIONKEY env var if you want to enable logging to Azure):
+
+```bash
+node webjob.js
+```
+
 To run the tests in development mode (a visible chrome window, with debugger, snapshots, which reloads when you make a change):
 
 ```bash
