@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --env --spec cypress/integration/search-and-compare-ui/**/*",
+    "cy:run": "cypress run --spec cypress/integration/search-and-compare-ui/**/*",
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
     "start": "node webjob.js",
