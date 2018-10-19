@@ -14,4 +14,19 @@
 // ***********************************************************
 require("./commands.ts");
 
-global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
+const CURRENT_BRANCH = process.env.CURRENT_BRANCH;
+
+switch (CURRENT_BRANCH) {
+    case 'master':
+        global.URL = "https://bat-dev-search-and-compare-ui-app.azurewebsites.net";
+        break;
+    case 'staging':
+        global.URL = "https://bat-staging-search-and-compare-ui-app.azurewebsites.net";
+        break;
+    case 'production':
+        global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
+        break;
+    default:
+        global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
+        break;
+}

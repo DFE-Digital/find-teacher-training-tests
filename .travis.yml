@@ -11,6 +11,8 @@ cache:
 defaults:
   script:
     - "$(npm bin)/print-env TRAVIS"
+    - export CURRENT_BRANCH=(git rev-parse --abbrev-ref HEAD)
+    - echo $CURRENT_BRANCH
     - npm start -- --silent &
     - npm run cy:run
     - kill $(jobs -p) || true
