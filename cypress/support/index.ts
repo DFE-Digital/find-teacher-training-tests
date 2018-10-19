@@ -14,17 +14,4 @@
 // ***********************************************************
 require("./commands.ts");
 
-switch (process.env.TRAVIS_BRANCH) {
-    case 'master':
-        global.URL = "https://example.com";
-        break;
-    case 'staging':
-        global.URL = "https://bat-staging-search-and-compare-ui-app.azurewebsites.net";
-        break;
-    case 'production':
-        global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
-        break;
-    default:
-        global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
-        break;
-}
+global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
