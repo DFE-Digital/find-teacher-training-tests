@@ -14,9 +14,7 @@
 // ***********************************************************
 require("./commands.ts");
 
-const CURRENT_BRANCH = process.env.CURRENT_BRANCH;
-
-switch (CURRENT_BRANCH) {
+switch (process.env.TRAVIS_BRANCH) {
     case 'master':
         global.URL = "https://bat-dev-search-and-compare-ui-app.azurewebsites.net";
         break;

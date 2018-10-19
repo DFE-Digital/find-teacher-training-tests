@@ -8,9 +8,6 @@ cache:
   override:
     - npm ci
     - npm run cy:verify
-before_script:
-  - export CURRENT_BRANCH=(git rev-parse --abbrev-ref HEAD)
-  - echo $CURRENT_BRANCH
 notifications:
   slack:
     secure: L4jZaDmU/D4koIjWfL1D6vsc6eh6N4Qlhwgdf3ymjwK7KB2e66ekxIeuMvBRIWtu8bYnpdkqT+RSR2dNW6i0Qw78stDYy7i118Zxbnd3xlLOK6ClXElYFIcoMaFVlOS1wGRLH++0QP4WfQx8YY7qKrH0RLkmZeTiYDT83G7Mg+Inuf4A8adh51fGtOjzMJ86nugkEFpkad+t/yQI7zOb/bwyoYCr0JR1GmgcBUssgJq+MhjmBJd7deATIiIUCpm3kMBqWyfBkS++pnb4d/9AkMZqTajiYV6x121YUU2Nz5Avf8xGJgLOJP9eycNr7VkLePJv7w/a0+YIissVXLMbj2xJNunThy+5vV+Pp6ifEK/lL7eGcvY1u5wvqKuzO226WFSIq7A4pwbB+3dFv1SYtXqvv67Wpi4i0C5jkVauFIBpzXKZfyBsy3WTTq7AX0Seu6rtSpC/jGbuZIo6GBQnvEjWsl0raqDb9gh+/g6WG898tawlVcUiKsixitYODpWG5kdbB5AbJYjTY24krZeySj7pMKMzsXJJ7ZSCUKtJBpieFqo1bu3DMI1m7ZDDVwA2y8o1n8FsLAwLI17By5huiACvy7kQnahecycUKr8o7yZdTmjUKTxNJ5lxKsS1bTYjjGPOj7DufxTEUTGRVgMkMy+z2/tCiYCL7Z2+92jNv6c=
