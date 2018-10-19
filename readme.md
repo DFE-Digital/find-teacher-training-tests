@@ -79,15 +79,15 @@ For those used to writing in other JS testing frameworks like `mocha` or `jasmin
 
 We run a webjob on Azure which triggers a build on Travis every 5 minutes. The script is `webjob/webjob.sh`. To deploy this script:
 
-- Create a zip from the `webjob` folder from this repository
-- Navigate in Azure to `bat-dev-search-and-compare-ui-app`
-- Select WebJobs
-- Delete the old `smoke-tests` job
-- Add a new job, call it `smoke-tests`
-- Set the source to the zip you created earlier
-- Set it to be Triggered
-- Set the cron expression to the one in `webjob/settings.job`
-- OK it
+1. Create a zip from the `webjob` folder from this repository
+1. Navigate in Azure to `bat-dev-search-and-compare-ui-app`
+1. Select WebJobs
+1. Delete the old `smoke-tests` job
+1. Add a new job, call it `smoke-tests`
+1. Set the source to the zip you created earlier
+1. Set it to be Triggered
+1. Set the cron expression to the one in `webjob/settings.job`
+1. OK it
 
 It should look like this:
 
