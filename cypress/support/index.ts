@@ -16,7 +16,7 @@ require("./commands.ts");
 
 switch (Cypress.env("TRAVIS_BRANCH")) {
   case "master":
-    global.URL = "https://google.co.uk";
+    global.URL = "https://bat-dev-search-and-compare-ui-app.azurewebsites.net";
     break;
   case "staging":
     global.URL = "https://bat-staging-search-and-compare-ui-app.azurewebsites.net";
@@ -25,6 +25,6 @@ switch (Cypress.env("TRAVIS_BRANCH")) {
     global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
     break;
   default:
-    global.URL = "https://www.example.com";
+    global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
     break;
 }
