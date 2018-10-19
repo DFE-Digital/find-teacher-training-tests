@@ -16,7 +16,7 @@ require("./commands.ts");
 
 switch (process.env.TRAVIS_BRANCH) {
     case 'master':
-        global.URL = "https://bat-dev-search-and-compare-ui-app.azurewebsites.net";
+        global.URL = "https://example.com";
         break;
     case 'staging':
         global.URL = "https://bat-staging-search-and-compare-ui-app.azurewebsites.net";
