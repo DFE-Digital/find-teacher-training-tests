@@ -16,7 +16,7 @@ curl -s -X POST \
     -H "Travis-API-Version: 3" \
     -H "Authorization: token $TRAVIS_KEY" \
     -d "{ \"request\": { \"branch\": \"staging\" } }" \
-    https://api.travis-ci.org/repo/DFE-Digital%2fsearch-and-compare-ui-tests/
+    https://api.travis-ci.org/repo/DFE-Digital%2fsearch-and-compare-ui-tests/requests
 
 # Live
 curl -s -X POST \
@@ -25,4 +25,4 @@ curl -s -X POST \
     -H "Travis-API-Version: 3" \
     -H "Authorization: token $TRAVIS_KEY" \
     -d "{ \"request\": { \"branch\": \"production\" } }" \
-    https://api.travis-ci.org/repo/DFE-Digital%2fsearch-and-compare-ui-tests/
+    https://api.travis-ci.org/repo/DFE-Digital%2fsearch-and-compare-ui-tests/requests
