@@ -43,4 +43,8 @@ describe("Basic", () => {
     cy.contains(courseTitle).click();
     cy.get("h1").should("contain", courseTitle);
   });
+
+  it("should show an enriched course", () => {
+    cy.contains("How school placements work").should("exist");
+  });
 });
