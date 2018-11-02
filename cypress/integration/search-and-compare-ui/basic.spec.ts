@@ -44,7 +44,7 @@ describe("Basic", () => {
     cy.get("h1").should("contain", courseTitle);
   });
 
-  it("should show an enriched course", () => {
+  (TEST_ENV === "production" ? it : it.skip)("should show an enriched course", () => {
     cy.contains("How school placements work").should("exist");
   });
 });
