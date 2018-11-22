@@ -39,8 +39,8 @@ describe("Basic", () => {
   });
 
   it("should let users view a course", () => {
-    const courseTitle = "Business Studies with Academies Enterprise Trust & Tendring Teaching School Alliance: Eastern";
-    cy.contains(courseTitle).click();
+    const courseTitle = "Academies Enterprise Trust & Tendring Teaching School Alliance: Eastern";
+    cy.contains(courseTitle).click({ force: true }); // Forcing because Cypress erroneously thinks the element can't be interacted with.
     cy.get("h1").should("contain", courseTitle);
   });
 
