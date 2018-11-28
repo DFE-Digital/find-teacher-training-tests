@@ -5,14 +5,6 @@ describe("Basic", () => {
     cy.visit(URL);
   });
 
-  afterEach(() => {
-    cy.checkForDefaultTitle();
-  });
-
-  it("should have correct title", () => {
-    cy.title().should("include", "Find courses by location or by training provider");
-  });
-
   it("should show a validation error if user does not select a location", () => {
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("exist");

@@ -5,10 +5,6 @@ describe("Geocoding", () => {
     cy.visit(URL);
   });
 
-  afterEach(() => {
-    cy.checkForDefaultTitle();
-  });
-
   it("should let user search by location", () => {
     cy.contains("By postcode").click();
     cy.get("#location").type("westmin");
