@@ -25,10 +25,10 @@ switch (Cypress.env("TRAVIS_BRANCH")) {
     break;
   case "production":
     global.TEST_ENV = "production";
-    global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
+    global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
     break;
   default:
     global.TEST_ENV = "production";
-    global.URL = "https://find-postgraduate-teacher-training.education.gov.uk";
+    global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
     break;
 }
