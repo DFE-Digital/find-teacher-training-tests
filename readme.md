@@ -1,6 +1,6 @@
 # Search and compare UI tests
 
-These are smoke tests for the [Find postgraduate teacher training service](https://find-postgraduate-teacher-training.education.gov.uk). They aim to simulate a complete user journey from the perspective of the user, touching all parts of the stack along the way.
+These are smoke tests for the [Find postgraduate teacher training service](https://www.find-postgraduate-teacher-training.service.gov.uk). They aim to simulate a complete user journey from the perspective of the user, touching all parts of the stack along the way.
 
 ## Running locally
 
