@@ -10,6 +10,11 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
+
+- script: |
+    GIT_SHORT_SHA=$(echo $(Build.SourceVersion) | cut -c 1-7)
+    echo "##vso[build.updatebuildnumber]$GIT_SHORT_SHA"
+  displayName: 'Set version number'
   
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
