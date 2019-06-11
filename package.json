@@ -12,7 +12,8 @@
     "cy:version": "cypress version",
     "start": "node webjob.js",
     "test": "npm run cy:run",
-    "print-env": "print-env"
+    "print-env": "print-env",
+    "cy:runci": "cypress run --spec cypress/integration/search-and-compare-ui/**/* --config baseUrl=__CYPRESS_baseUrl__"
   },
   "dependencies": {
     "applicationinsights": "^1.0.5",
