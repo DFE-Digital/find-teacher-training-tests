@@ -11,7 +11,8 @@
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
     "start": "node webjob.js",
-    "test": "npm run cy:run"
+    "test": "npm run cy:run",
+    "print-env": "print-env"
   },
   "dependencies": {
     "applicationinsights": "^1.0.5",

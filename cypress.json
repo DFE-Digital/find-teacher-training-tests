@@ -1,6 +1,5 @@
 {
   "blacklistHosts": "www.google-analytics.com",
   "video": false,
-  "supportFile": "cypress/support/index.ts",
-  "baseUrl": "https://thisurlshouldbeoverridenbyanenvvar"
+  "supportFile": "cypress/support/index.ts"
 }
