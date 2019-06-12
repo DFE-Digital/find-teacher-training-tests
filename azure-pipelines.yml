@@ -1,0 +1,30 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - "*"
+
+pr: none
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+
+- script: |
+    GIT_SHORT_SHA=$(echo $(Build.SourceVersion) | cut -c 1-7)
+    echo "##vso[build.updatebuildnumber]$GIT_SHORT_SHA"
+  displayName: 'Set version number'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    Contents: |
+     **
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    OverWrite: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
