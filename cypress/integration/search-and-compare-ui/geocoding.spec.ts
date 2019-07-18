@@ -27,7 +27,7 @@ describe("Geocoding", () => {
   });
 
   it("should let users view a course", () => {
-    const courseTitle = "Harris Initial Teacher Education";
+    const courseTitle = "United Teaching National SCITT";
     cy.contains(courseTitle).click({ force: true }); // Forcing because Cypress erroneously thinks the element can't be interacted with.
     cy.get("h1").should("contain", courseTitle);
   });
