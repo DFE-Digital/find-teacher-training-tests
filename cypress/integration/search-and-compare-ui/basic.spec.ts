@@ -39,7 +39,7 @@ describe("Basic", () => {
   });
 
   it("should let users view a course", () => {
-    const courseTitle = "Ashton on Mersey School SCITT";
+    const courseTitle = "Bath Spa University";
     cy.contains(courseTitle).click({ force: true }); // Forcing because Cypress erroneously thinks the element can't be interacted with.
     cy.get("h1").should("contain", courseTitle);
   });
