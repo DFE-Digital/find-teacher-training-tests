@@ -39,12 +39,11 @@ describe("Basic", () => {
   });
 
   it("should let users view a course", () => {
-    const courseTitle = "Bishop Grosseteste University";
-    cy.contains(courseTitle).click({ force: true }); // Forcing because Cypress erroneously thinks the element can't be interacted with.
-    cy.get("h1").should("contain", courseTitle);
+    cy.get(".search-result-link-name:first").click();
+    cy.get("h1").should("contain", "Business");
   });
 
   it("should show an enriched course", () => {
-    cy.contains("How school placements work").should("exist");
+    cy.contains("Apply").should("exist");
   });
 });
