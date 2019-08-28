@@ -75,23 +75,6 @@ For those used to writing in other JS testing frameworks like `mocha` or `jasmin
 - Cypress does not use `async/await`, all commands are queued onto a scheduler and the framework automatically manages waiting. Commands are promise-like with `.then` chaining, but crucially **they are not standard promises**. Most commands (even if async in nature) can be written in a synchronous style, because assertions have built-in waiting. [`cy.wait` shouldn't be necessary for most tests](https://docs.cypress.io/guides/references/best-practices.html#Unnecessary-Waiting).
 - There is only one dependency, the `cypress` node package, but it comes with built-in support for `_`, `moment`, `$`, and [some other commonly used libraries](https://docs.cypress.io/guides/references/bundled-tools.html#Other-Library-Utilities).
 
-## Deploying to Azure
-
-We run a webjob on Azure which triggers a build on Travis every 5 minutes. The script is `webjob/webjob.sh`. To deploy this script:
-
-1. Create a zip from the `webjob` folder from this repository
-1. Navigate in Azure to `bat-dev-search-and-compare-ui-app`
-1. Select WebJobs
-1. Delete the old `smoke-tests` job
-1. Add a new job, call it `smoke-tests`
-1. Set the source to the zip you created earlier
-1. Set it to be Triggered
-1. Set the cron expression to the one in `webjob/settings.job`
-1. OK it
-
-It should look like this:
-
-![Deploying the webjob to Azure](docs/deploy_webjob.png)
 
 ## License
 
