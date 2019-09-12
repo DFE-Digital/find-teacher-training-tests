@@ -17,11 +17,11 @@ require("./commands.ts");
 switch (Cypress.env("TRAVIS_BRANCH")) {
   case "master":
     global.TEST_ENV = "dev";
-    global.URL = "https://bat-qa-sacui-as.azurewebsites.net";
+    global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
     break;
   case "staging":
     global.TEST_ENV = "staging";
-    global.URL = "https://bat-staging-search-and-compare-ui-app.azurewebsites.net";
+    global.URL = "https://www.staging.find-postgraduate-teacher-training.service.gov.uk";
     break;
   case "production":
     global.TEST_ENV = "production";
