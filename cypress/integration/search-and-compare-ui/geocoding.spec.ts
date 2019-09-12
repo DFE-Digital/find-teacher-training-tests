@@ -3,6 +3,7 @@
 describe("Geocoding", () => {
   before(() => {
     cy.visit(URL);
+    cy.contains("Find courses that still have vacancies").click();
   });
 
   afterEach(() => {
