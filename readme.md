@@ -1,4 +1,4 @@
-# Search and compare UI tests
+# Find teacher training tests
 
 These are smoke tests for the [Find postgraduate teacher training service](https://www.find-postgraduate-teacher-training.service.gov.uk). They aim to simulate a complete user journey from the perspective of the user, touching all parts of the stack along the way.
 
@@ -32,7 +32,7 @@ You should get this window:
 
 ![Cypress Open window](docs/cy_open.png)
 
-Fold the `examples` folder and click on a spec from the `search-and-compare-ui` folder.
+Fold the `examples` folder and click on a spec from the `find-teacher-training` folder.
 
 A Chrome window should appear and you should see something like:
 
@@ -53,7 +53,7 @@ cypress
 │   ├── examples
 │   │   ├── actions.spec.ts
 │   │   ├── ...
-│   └── search-and-compare-ui
+│   └── find-teacher-training
 │       └── basic.spec.ts
 ├── plugins
 │   └── index.ts
@@ -62,9 +62,9 @@ cypress
     └── index.ts
 ```
 
-All tests should live under `cypress/integration/search-and-compare-ui`. The `examples` folder comes with Cypress and is left in for documentation purposes. 90% of common commands and assertions can be found there and played around with / copy pasted straight into new specs.
+All tests should live under `cypress/integration/find-teacher-training`. The `examples` folder comes with Cypress and is left in for documentation purposes. 90% of common commands and assertions can be found there and played around with / copy pasted straight into new specs.
 
-An end to end user journey should live in its own file in `search-and-compare-ui`; this helps with parallelization.
+An end to end user journey should live in its own file in `find-teacher-training`; this helps with parallelization.
 
 Shared commands and global variables can be defined in the `support` folder.
 
