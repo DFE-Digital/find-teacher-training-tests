@@ -1,13 +1,13 @@
 {
-  "name": "search-and-compare-ui-tests",
+  "name": "find-teacher-training-tests",
   "description": "End to end / smoke tests for Find Postgraduate Teacher Training",
-  "repository": "https://github.com/DFE-Digital/search-and-compare-ui-tests",
+  "repository": "https://github.com/DFE-Digital/find-teacher-training-tests",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec cypress/integration/search-and-compare-ui/**/*",
+    "cy:run": "cypress run --spec cypress/integration/find-teacher-training/**/*",
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
     "start": "node webjob.js",
@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "applicationinsights": "^1.0.5",
-    "cypress": "^3.1.5"
+    "cypress": "^3.8.3"
   }
 }
