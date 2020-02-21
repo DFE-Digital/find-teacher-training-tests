@@ -14,8 +14,8 @@
 // ***********************************************************
 require("./commands.ts");
 
-switch (Cypress.env("TRAVIS_BRANCH")) {
-  case "master":
+switch (Cypress.env("ENVIRONMENT")) {
+  case "qa":
     global.TEST_ENV = "dev";
     global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
     break;
