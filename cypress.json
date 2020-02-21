@@ -1,5 +1,5 @@
 {
   "blacklistHosts": "www.google-analytics.com",
-  "video": false,
+  "video": true,
   "supportFile": "cypress/support/index.ts"
 }
