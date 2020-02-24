@@ -14,7 +14,7 @@
     "test": "npm run cy:run"
   },
   "dependencies": {
-    "applicationinsights": "^1.0.5",
+    "applicationinsights": "^1.7.2",
     "cypress": "^3.8.3"
   }
 }
