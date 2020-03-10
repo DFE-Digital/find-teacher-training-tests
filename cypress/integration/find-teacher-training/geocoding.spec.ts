@@ -1,7 +1,12 @@
 /// <reference types="Cypress" />
 
+Cypress.Cookies.defaults({
+  whitelist: "_find_teacher_training_session"
+})
+
 describe("Geocoding", () => {
   before(() => {
+    cy.clearCookies()
     cy.visit(URL);
     cy.contains("Continue").click();
   });
