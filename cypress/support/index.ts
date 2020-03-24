@@ -29,7 +29,7 @@ switch (Cypress.env("ENVIRONMENT")) {
     break;
   case "qa2":
     global.TEST_ENV = "dev";
-    global.URL = "https://www2.qa.find-postgraduate-teacher-training.service.gov.uk";
+    global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
     break;
   case "staging2":
     global.TEST_ENV = "staging";
