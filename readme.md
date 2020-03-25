@@ -4,7 +4,7 @@ These are smoke tests for the [Find postgraduate teacher training service](https
 
 ## Running locally
 
-Install the dependencies (tested on node v10 and npm v6):
+Install the dependencies (tested on node v12 and npm v6):
 
 ```bash
 npm i
