@@ -14,33 +14,21 @@
 // ***********************************************************
 require("./commands.ts");
 
-switch (Cypress.env("ENVIRONMENT")) {
-  case "qa":
-    global.TEST_ENV = "dev";
-    global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  case "staging":
-    global.TEST_ENV = "staging";
-    global.URL = "https://www.staging.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  case "production":
-    global.TEST_ENV = "production";
-    global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  case "qa2":
-    global.TEST_ENV = "dev";
-    global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  case "staging2":
-    global.TEST_ENV = "staging";
-    global.URL = "https://www.staging.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  case "production2":
-    global.TEST_ENV = "production";
-    global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
-    break;
-  default:
-    global.TEST_ENV = "production";
-    global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
-    break;
+global.URL = Cypress.env("CYPRESS_BASE_URL");
+
+if(!global.URL) {
+  switch (Cypress.env("ENVIRONMENT")) {
+    case "qa":
+      global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
+      break;
+    case "staging":
+      global.URL = "https://www.staging.find-postgraduate-teacher-training.service.gov.uk";
+      break;
+    case "production":
+      global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
+      break;
+    default:
+      global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
+      break;
+  }
 }
