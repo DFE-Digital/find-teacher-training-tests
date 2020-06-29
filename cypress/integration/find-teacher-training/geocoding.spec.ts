@@ -18,7 +18,7 @@ describe("Geocoding", () => {
   it("should let user search by location", () => {
     cy.contains("By postcode").click();
     cy.get("#location").type("westmin");
-    cy.contains("Westminster, London, UK").click();
+    cy.contains("Westminster, London").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
     cy.get("h1").should("contain", "Find courses by subject");
