@@ -17,6 +17,6 @@
     "applicationinsights": "^1.8.2"
   },
   "devDependencies": {
-    "cypress": "^4.10.0"
+    "cypress": "^4.11.0"
   }
 }
