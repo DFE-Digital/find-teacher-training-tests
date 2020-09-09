@@ -8,6 +8,7 @@ describe("Geocoding", () => {
   before(() => {
     cy.clearCookies()
     cy.visit(URL);
+    cy.contains("Find courses with vacancies").click();
     cy.contains("Continue").click();
   });
 
