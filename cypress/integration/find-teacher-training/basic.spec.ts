@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 Cypress.Cookies.defaults({
-  whitelist: "_find_teacher_training_session"
+  preserve: "_find_teacher_training_session"
 })
 
 describe("Basic", () => {
