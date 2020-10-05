@@ -8,7 +8,6 @@ describe("Basic", () => {
   before(() => {
     cy.clearCookies()
     cy.visit(URL);
-    cy.contains("this website is still showing some courses (these may not be available for the 2021 to 2022 academic year)").click();
     cy.contains("Continue").click();
   });
 
