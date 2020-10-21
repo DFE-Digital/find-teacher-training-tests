@@ -5,12 +5,26 @@ on:
       environment:
         description: The environment to run tests against.
         required: true
+      find-teacher-training-sha:
+        description: The commit sha of the find-teacher-training repo which triggered this smoke test run.
+        default: 'HEAD'
+        required: true
 
 jobs:
   smoke_tests:
     name: Run Smoke Tests on ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
     steps:
+      - name: Report pending smoke-tests status to find-teacher-training repo
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.ACTIONS_API_ACCESS_TOKEN }}" \
+            https://api.github.com/repos/DFE-Digital/find-teacher-training/statuses/${{ github.event.inputs.find-teacher-training-sha }} \
+            -d '{"context": "some-tests-${{ github.event.inputs.environment }}",
+                 "state": "pending",
+                 "target_url": "https://github.com/DFE-Digital/find-teacher-training-tests/actions/runs/${{ github.run_id }}"}'
+        
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -22,6 +36,23 @@ jobs:
           RAILS_ENV: ${{ github.event.inputs.environment }}
 
       - name: Cypress Run against ${{ github.event.inputs.environment }}
-        run: | 
+        id: cypress_run
+        run: |
           npm install
           npx cypress run
+
+      - name: Report sucess/failure status to find-teacher-training repo
+        if: ${{ always() }}
+        run: |
+          smoke_test_status="failure"
+          if [ "${{ steps.cypress_run.outcome }}" == "success" ];
+          then
+            smoke_test_status="success"
+          fi
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.ACTIONS_API_ACCESS_TOKEN }}" \
+            https://api.github.com/repos/DFE-Digital/find-teacher-training/statuses/${{ github.event.inputs.find-teacher-training-sha }} \
+            -d '{"context": "some-tests-${{ github.event.inputs.environment }}",
+                 "state": "'$smoke_test_status'",
+                 "target_url": "https://github.com/DFE-Digital/find-teacher-training-tests/actions/runs/${{ github.run_id }}"}'
