@@ -14,7 +14,7 @@
     "test": "npm run cy:run"
   },
   "dependencies": {
-    "applicationinsights": "^1.8.7"
+    "applicationinsights": "^1.8.8"
   },
   "devDependencies": {
     "@types/node": "^14.14.0",
