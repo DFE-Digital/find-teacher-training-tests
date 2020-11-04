@@ -19,10 +19,10 @@ global.URL = Cypress.env("CYPRESS_BASE_URL");
 if(!global.URL) {
   switch (Cypress.env("ENVIRONMENT")) {
     case "qa":
-      global.URL = "https://www.qa.find-postgraduate-teacher-training.service.gov.uk";
+      global.URL = "https://qa.find-postgraduate-teacher-training.service.gov.uk";
       break;
     case "staging":
-      global.URL = "https://www.staging.find-postgraduate-teacher-training.service.gov.uk";
+      global.URL = "https://staging.find-postgraduate-teacher-training.service.gov.uk";
       break;
     case "production":
       global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
