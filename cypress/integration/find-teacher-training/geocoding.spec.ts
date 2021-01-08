@@ -16,7 +16,7 @@ describe("Geocoding", () => {
   });
 
   it("should let user search by location", () => {
-    cy.contains("By postcode").click();
+    cy.contains("By city").click();
     cy.get("#location").type("westmin");
     cy.contains("Westminster, London").click();
     cy.contains("Continue").click();
