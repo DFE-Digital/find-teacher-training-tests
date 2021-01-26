@@ -27,6 +27,9 @@ if(!global.URL) {
     case "production":
       global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
       break;
+    case "sandbox":
+      global.URL = "https://sandbox.find-postgraduate-teacher-training.service.gov.uk";
+      break;      
     default:
       global.URL = "https://www.find-postgraduate-teacher-training.service.gov.uk";
       break;
