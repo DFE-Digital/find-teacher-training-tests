@@ -21,7 +21,7 @@ describe("Geocoding", () => {
     cy.contains("Westminster, London").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
-    cy.get("h1").should("contain", "Find courses by subject");
+    cy.get("h1").should("contain", "Select the subjects you want to teach");
   });
 
   it("should let user search for Business Studies", () => {
