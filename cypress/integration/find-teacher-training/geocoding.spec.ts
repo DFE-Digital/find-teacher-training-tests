@@ -33,7 +33,7 @@ describe("Geocoding", () => {
   });
 
   it("should let users view a course", () => {
-    cy.get(".search-result-link-name:first").click();
+    cy.get(".app-search-result__course-name:first").click();
     cy.get("h1").should("contain", "Business");
   });
 });
