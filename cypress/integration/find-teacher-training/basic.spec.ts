@@ -29,7 +29,7 @@ describe("Basic", () => {
     cy.contains("Across England").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
-    cy.get("h1").should("contain", "Find courses by subject");
+    cy.get("h1").should("contain", "Select the subjects you want to teach");
   });
 
   it("should show a validation error if user does not select a subject", () => {
@@ -46,7 +46,7 @@ describe("Basic", () => {
   });
 
   it("should let users view a course", () => {
-    cy.get(".search-result-link:first").click();
+    cy.get(".app-search-result__course-name:first").click();
     cy.get("h1").should("contain", "Business");
   });
 
