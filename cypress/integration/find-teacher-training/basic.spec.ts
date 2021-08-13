@@ -46,7 +46,7 @@ describe("Basic", () => {
   });
 
   it("should let users view a course", () => {
-    cy.get(".app-search-result__course-name:first").click();
+    cy.get(".app-search-result__item-title:first").click();
     cy.get("h1").should("contain", "Business");
   });
 
