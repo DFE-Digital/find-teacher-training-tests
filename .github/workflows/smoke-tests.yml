@@ -36,7 +36,7 @@ jobs:
           echo "RAILS_ENV=$RAILS_ENV" >> $GITHUB_ENV
           echo "CYPRESS_ENVIRONMENT=$RAILS_ENV" >> $GITHUB_ENV
           if [ -n "${{ github.event.inputs.pr }}" ]; then
-            echo "CYPRESS_BASE_URL=https://find-pr-$PR_NUMBER.london.cloudapps.digital" >> $GITHUB_ENV
+            echo "CYPRESS_ENV_VARS='--env BASE_URL=https://find-pr-$PR_NUMBER.london.cloudapps.digital'" >> $GITHUB_ENV
           fi;
         env:
           RAILS_ENV: ${{ github.event.inputs.environment }}
@@ -45,7 +45,7 @@ jobs:
         id: cypress_run
         run: |
           npm install
-          npx cypress run
+          npx cypress run $CYPRESS_ENV_VARS
 
       - name: Report sucess/failure status to find-teacher-training repo
         if: ${{ always() }}
