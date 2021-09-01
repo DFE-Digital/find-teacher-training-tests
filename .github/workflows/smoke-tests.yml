@@ -5,6 +5,9 @@ on:
       environment:
         description: The environment to run tests against.
         required: true
+      pr:
+        description: 'The PR number if the environment is review'
+        required: false        
       find-teacher-training-sha:
         description: The commit sha of the find-teacher-training repo which triggered this smoke test run.
         default: 'HEAD'
@@ -32,6 +35,9 @@ jobs:
         run: |
           echo "RAILS_ENV=$RAILS_ENV" >> $GITHUB_ENV
           echo "CYPRESS_ENVIRONMENT=$RAILS_ENV" >> $GITHUB_ENV
+          if [ -n "${{ github.event.inputs.pr }}" ]; then
+            echo "CYPRESS_BASE_URL=https://find-pr-$PR_NUMBER.london.cloudapps.digital" >> $GITHUB_ENV
+          fi;
         env:
           RAILS_ENV: ${{ github.event.inputs.environment }}
 
