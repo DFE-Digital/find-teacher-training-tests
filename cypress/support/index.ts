@@ -14,7 +14,7 @@
 // ***********************************************************
 require("./commands.ts");
 
-global.URL = Cypress.env("CYPRESS_BASE_URL");
+global.URL = Cypress.env("BASE_URL");
 
 if(!global.URL) {
   switch (Cypress.env("ENVIRONMENT")) {
