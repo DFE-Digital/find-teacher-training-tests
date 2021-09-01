@@ -42,7 +42,7 @@ describe("Basic", () => {
     cy.contains("Business studies").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
-    cy.get("h1").should("contain", "Teacher training courses");
+    cy.get("[id=filter-line]").contains("Business studies courses in England");
   });
 
   it("should let users view a course", () => {
