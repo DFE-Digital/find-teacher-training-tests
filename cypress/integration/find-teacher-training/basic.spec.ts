@@ -20,6 +20,10 @@ describe("Basic", () => {
     cy.title().should("include", "Find courses by location or by training provider");
   });
 
+  it("should have js-enabled", () => {
+    cy.get("body").should("have.class", "js-enabled");
+  });
+
   it("should show a validation error if user does not select a location", () => {
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("exist");
