@@ -24,16 +24,16 @@ describe("Geocoding", () => {
     cy.get("h1").should("contain", "Select the subjects you want to teach");
   });
 
-  it("should let user search for Business Studies", () => {
-    cy.contains("Secondary").click();
-    cy.contains("Business studies").click();
+  it("should let user search for a Primary course", () => {
+    cy.contains("Primary").click();
+    cy.contains("Primary with English").click();
     cy.contains("Continue").click();
     cy.get(".govuk-error-summary").should("not.exist");
-    cy.get("[id=filter-line]").contains("Business studies courses in Westminster, London");
+    cy.get("[id=filter-line]").contains("Primary with English courses in Westminster, London");
   });
 
   it("should let users view a course", () => {
     cy.get(".app-search-result__provider-name:first").click();
-    cy.get("h1").should("contain", "Business");
+    cy.get("h1").should("contain", "Primary");
   });
 });
